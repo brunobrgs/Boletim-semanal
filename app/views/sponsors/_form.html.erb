@@ -1,0 +1,46 @@
+<dl>
+  <dt><label>*Nome:</label></dt>
+  <dd><%= text_field :sponsor, :name, :size => 60, :maxlength => 100 %></dd>
+</dl>
+<dl>
+  <dt><label>*Usuário:</label></dt>
+  <dd><%= text_field :sponsor, :username,  :size => 30, :maxlength => 30 %></dd>
+</dl>
+<dl>
+  <dt><label>*Senha:</label></dt>
+  <dd><%= password_field :sponsor, :password, :value => "", :size => 30, :maxlength => 30 %></dd>
+</dl>
+<dl>
+  <dt><label>*Confirmação:</label></dt>
+  <dd><%= password_field :sponsor, :password_confirmation, :value => "", :size => 30, :maxlength => 30 %></dd>
+</dl>
+<dl>
+  <dt><label>Empresa:</label></dt>
+  <dd><%= text_field :sponsor, :company, :size => 60, :maxlength => 150 %></dd>
+</dl>
+<dl>
+  <dt><label>*Email:</label></dt>
+  <dd><%= text_field :sponsor, :email, :size => 60, :maxlength => 100 %></dd>
+</dl>
+<dl>
+  <dt><label>Telefone:</label></dt>
+  <dd><%= text_field :sponsor, :phone, :size => 12 %></dd>
+</dl>
+<dl>
+  <dt><label>Celular:</label></dt>
+  <dd><%= text_field :sponsor, :cell_phone, :size => 12 %></dd>
+</dl>
+<dl>
+  <dt><label>*Endereço:</label></dt>
+  <dd><%= text_field :sponsor, :address, :size => 60, :maxlength => 200 %></dd>
+</dl>
+<dl>
+  <dt><label>*Cidade:</label></dt>
+  <dd><%= text_field :sponsor, :city, :size => 25, :maxlength => 100 %></dd>
+</dl>
+
+<dd><%= submit_tag "Salvar" %></dd>
+<dd><%= link_to "Voltar", {:action => :index}, :class => :botao %></dd>
+
+
+

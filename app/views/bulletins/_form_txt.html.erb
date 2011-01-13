@@ -1,0 +1,23 @@
+<% form_remote_tag :url => {:action => :save_txt, :id => params[:id], :part_id => params[:part_id]} do %>
+
+  <fieldset>
+    <legend>Adicionar texto (<%= @part.title %>) </legend>
+    <%= render :partial => notice  %>
+
+    <div id="texts">
+      <dl>
+        <dt><label>*Texto:</label></dt>
+        <dd><%= text_area_tag "bulletin_text[text]", @part_txt.text, :size => "70x8", :maxlength => 1000 %></dd>
+      </dl>
+    </div>
+
+    <dd><%= submit_tag "Adicionar" %></dd>
+
+
+    <div style="float: right;">
+      <%= link_to "Voltar", {:action => :index}, :class => :botao %>
+    </div>
+  </fieldset>
+<% end %>
+
+

@@ -1,0 +1,61 @@
+<h1><%= @bulletin.title%></h1>
+
+<fieldset id="show">
+
+  <% @bulletin.bulletin_parts.each do |bp| %>
+
+    <% textos = bp.bulletin_texts %>
+    <% imagens = bp.bulletin_images %>
+    <% txt = 0 %>
+    <% img = 0 %>
+
+    <div style="background-color: wheat; height: 20px; width: <%= bp.interface.width %>px;">
+      <h2><%= bp.title %></h2>
+    </div>
+
+    <div style="position: relative; height: <%= bp.interface.altura %>px; width:<%= bp.interface.width %>px;">
+      <% bp.interface.components.each do |cp| %>
+
+        <div
+          style="
+          position: absolute;
+          width: <%= cp.width %>px;
+          height: <%= cp.height %>px;
+          <% unless cp.top.blank? %> margin-top: <%= cp.top %>px; <% end %>
+          <% unless cp.left.blank? %> margin-left: <%= cp.left %>px; <% end %>
+          <% unless cp.right.blank? %> margin-right: <%= cp.right %>px; <% end %>
+          <% unless cp.bottom.blank? %> margin-bottom: <%= cp.bottom%>px; <% end %>
+          ">
+
+          <!-- Conteúdos -->
+          <% unless cp.image %>
+
+            <!-- Textos -->
+            <% if textos.size > txt %>
+              <%= textos[txt].text %>
+              <% txt += 1 %>
+            <% else %>
+              :: Adicione texto ::
+            <% end %>
+
+          <% else %>
+
+            <!-- Imagens -->
+            <% if imagens.size > img %>
+              <%= image_tag imagens[img].image.url.split('/').last  %>
+              <% img += 1 %>
+            <% else %>
+              :: Adicione image ::
+            <% end %>
+
+          <% end %>
+
+        </div>
+
+      <% end %>
+    </div>
+
+  <% end %>
+
+
+</fieldset>

@@ -1,0 +1,232 @@
+*
+
+body {
+    margin:0;
+    padding:0;
+    background:#ccc;
+}
+
+#principal {
+    width: 1024px;
+    /*    height: 658px;*/
+    height: 1000px;
+    padding: 0;
+    background-color: #708090;
+    margin: 0 auto;
+}
+
+#menu {
+    width: 1024px;
+    /*    height: 658px;*/
+    height: 40px;
+    padding: 0;
+    background-color: #ccc;
+    margin: 0 auto;
+}
+
+#menu a {
+    text-decoration: none;
+}
+
+h1 {font-size: 25px; padding: 10px}
+
+fieldset#show {
+    background:#ccc;
+    float: left;
+    padding: 10px;
+    list-style: none;
+    width: 95%;
+    margin-left: 10px;
+}
+
+
+
+
+
+/*-------------------------------------------
+Listagem com tabelas
+-------------------------------------------*/
+
+table {clear:both; font-size: 13px;}
+
+/** Id **/
+#table_listagem {width:99%; text-align: left;}
+#table_listagem th{/* font-size:13px;  */padding:5px 10px; color:#000; background: #FFF;}
+
+#table_listagem tr:nth-child(even){background:#F3F7FB;}
+#table_listagem tr:nth-child(odd){background:#E0E8EF;}
+
+#table_listagem tr:nth-child(even):hover, #table_listagem tr:nth-child(odd):hover{background:#F1F1F1;}
+
+#table_listagem td {padding:0 10px; /* font-size:12px; */ color:#000;}
+
+.table_icones{width:50px;}
+
+/** Class **/
+.table_listagem {width:100%; margin: 10px 0 !important; text-align: left;}
+
+/*.table_listagem tr:nth-child(1){background:#E0E8EF !important;}*/
+
+.table_listagem tr:nth-child(even){background:#F3F7FB;}
+.table_listagem tr:nth-child(odd){background:#E0E8EF;}
+
+.table_listagem tr:nth-child(even):hover, .table_listagem tr:nth-child(odd):hover{background:#F1F1F1;}
+
+
+table#formulario td p{float:left; width:125px;}
+
+
+
+/* ------------------------
+FORMULÁRIOS
+-------------------------*/
+
+form {float: left; font:bold 15px Verdana; padding: 15px}
+
+form h2{font:bold 20px Verdana; padding:10px; color:#000; clear:both; margin:0 0 10px 0; text-transform: lowercase;}
+form h2:first-letter{text-transform: uppercase;}
+
+form input, form textarea{padding:-5px 0; font-size:15px !important;}
+form select, select{font-size:12px;}
+
+
+form li{margin:10px 10px; list-style: none;}
+
+form legend {font-weight: bold; font-size: 14px; padding:0 5px;}
+
+form table {padding: 5px; border-spacing: 10px;}
+
+
+
+/* ------------------------
+Listagem de dados
+-------------------------*/
+
+.list_data{margin:2px 10px;}
+
+.list_data ul{display:block;}
+
+.list_data li{ background:#ccc !important; color:#000; margin:0!important; padding:5px; list-style: none;}
+
+.list_data li a{ text-decoration: none; color: black;}
+
+
+
+
+
+/* ERRO DO PLUGIN VALIDATE */
+/*label.error_validate { float: none; color: #EE6363; padding-left: .5em; vertical-align: top;}*/
+
+
+
+/* FLASHS */
+.notice, .error, .warning, .info {
+    font-weight: bold;
+    padding: 5px 5px 5px 27px;
+}
+
+.notice {
+    border: 1px solid #9c9;
+    background: #e2f9e3 url(/images/icones/3/tick.png) no-repeat 5px center;
+    color: #060;
+}
+.notice a {color: #060;}
+
+.error {
+    border: 1px solid #c68484;
+    background: #fcc url(/images/icones//3/cross.png) no-repeat 5px center;
+    color: #c00;
+}
+.error a {color: #c00;}
+
+.warning {
+    border: 1px solid #dd0;
+    background: #ffc url(/images/icones//3/error.png) no-repeat 5px center;
+    color: #000;
+}
+.warning a {color: #000;}
+
+.info {
+    border: 1px solid #82c2d4;
+    background: #ebf5f8 url(/images/icones//3/information.png) no-repeat 5px center;
+    color: #000;
+}
+.info a {color: #000;}
+
+.notice a, .error a, .warning a, .info a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* ÍCONES */
+
+#icone_editar{
+    background:url(/images/icones/2/001_45_2.png) no-repeat left top;
+    text-indent:-9999em;
+    margin:0 5px !important;
+    overflow:hidden;
+    display:block;
+    float:right;
+    width:20px;
+    height:20px;
+}
+
+#icone_deletar{
+    background:url(/images/icones/2/001_29_2.png) no-repeat left top;
+    text-indent:-9999em;
+    margin:0 5px !important;
+    overflow:hidden;
+    display:block;
+    float:right;
+    width:20px;
+    height:20px;
+}
+
+#icone_inativar{
+    background:url(/images/icones/2/inativar.png) no-repeat left top;
+    text-indent:-9999em;
+    margin:0 5px !important;
+    overflow:hidden;
+    display:block;
+    float:right;
+    width:20px;
+    height:20px;
+}
+
+#icone_ativar{
+    background:url(/images/icones/2/ativar.png) no-repeat left top;
+    text-indent:-9999em;
+    margin:0 5px !important;
+    overflow:hidden;
+    display:block;
+    float:right;
+    width:20px;
+    height:20px;
+}
+
+#icone_add_img{
+    background:url(/images/icones/2/001_03_2.png) no-repeat left top;
+    text-indent:-9999em;
+    margin:0 5px !important;
+    overflow:hidden;
+    display:block;
+    float:right;
+    width:20px;
+    height:20px;
+}
+
+#icone_add_txt{
+    background:url(/images/icones/2/001_01_2.png) no-repeat left top;
+    text-indent:-9999em;
+    margin:0 5px !important;
+    overflow:hidden;
+    display:block;
+    float:right;
+    width:20px;
+    height:20px;
+}

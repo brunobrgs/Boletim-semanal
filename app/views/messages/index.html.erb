@@ -1,0 +1,35 @@
+<%= render :partial => notice %>
+<h1>
+  Mensagens
+  <% if !params[:enviadas].blank? %>
+    Enviadas
+  <% elsif !params[:deletadas].blank? %>
+    Excluídas
+  <% else %>
+    Recebidas
+  <% end %>
+</h1>
+
+<% unless @mensagens.blank? %>
+
+  <table id="table_listagem">
+    <% @mensagens.each do |m| %>
+      <tr>
+        <td><%= link_to m.title, {:action => :show, :id => m.id, :enviadas => params[:enviadas], :deletadas => params[:deletadas]} %></td>
+        <td width="120"><%= m.date.to_formatted_s(:datahora) %></td>
+
+        <% unless m.deleted?(@user) %>
+          <td width="20" align="center">
+            <%= link_to "", {:action => :destroy, :id => m.id}, :method => :delete, :confirm => "Deletar ?", :id => :icone_deletar, :title => 'Deletar' %>
+          </td>
+        <% end %>
+
+      </tr>
+    <% end %>
+  </table>
+
+<% else %>
+  Não existem mensagens para você.
+<% end %>
+
+<%= render :partial => tooltip, :locals => {:local => '#table_listagem', :tipo => 'a', :lar => '40', :al => '20'} %>

@@ -1,0 +1,22 @@
+<%= render :partial => notice %>
+<h1>Interfaces</h1>
+
+<% unless @interfaces.blank? %>
+
+  <table id="table_listagem">
+    <% @interfaces.each do |i| %>
+      <tr>
+        <td><%= link_to "#{i.name} (#{i.width} px)", {:action => :show, :id => i.id} %></td>
+        <td width="60" align="center">
+          <%= link_to "", {:action => :destroy, :id => i.id}, :method => :delete, :confirm => "Deletar ?", :id => :icone_deletar, :title => 'Deletar' %>
+          <%= link_to "", {:action => :edit, :id => i.id}, :id => :icone_editar, :title => 'Editar' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+<% else %>
+  Não existem interfaces cadastradas.
+<% end %>
+
+<%= render :partial => tooltip, :locals => {:local => '#table_listagem', :tipo => 'a', :lar => '40', :al => '20'} %>

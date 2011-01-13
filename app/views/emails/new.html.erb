@@ -1,0 +1,12 @@
+<%= render :partial => notice %>
+
+<% form_for @email, :html => {:class => 'niceform'} do %>
+
+  <fieldset>
+    <legend>Cadastrar email</legend>
+    <%= render :partial => 'form' %>
+  </fieldset>
+
+<% end %>
+
+

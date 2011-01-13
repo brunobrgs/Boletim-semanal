@@ -1,0 +1,26 @@
+<%= render :partial => notice %>
+<h1>Emails</h1>
+
+<% unless @emails.blank? %>
+
+  <table id="table_listagem">
+    <th>Email</th>
+    <th>Data</th>
+    <th width="60" align="center"></th>
+    <% @emails.each do |u| %>
+      <tr>
+        <td><%= u.email %></td>
+        <td><%= u.date.to_formatted_s(:data) %></td>
+        <td align="center">
+          <%= link_to "", {:action => :destroy, :id => u.id}, :method => :delete, :confirm => "Deletar ?", :id => :icone_deletar, :title => 'Deletar' %>
+          <%= link_to "", {:action => :edit, :id => u.id}, :id => :icone_editar, :title => 'Editar' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+<% else %>
+  Não existem emails cadastrados.
+<% end %>
+
+<%= render :partial => tooltip, :locals => {:local => '#table_listagem', :tipo => 'a', :lar => '40', :al => '20'} %>

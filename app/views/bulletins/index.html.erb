@@ -1,0 +1,26 @@
+<%= render :partial => notice %>
+<h1>Boletins</h1>
+
+<% unless @bulletins.blank? %>
+
+  <table id="table_listagem">
+    <th>Título</th>
+    <th>Data</th>
+    <th></th>
+    <% @bulletins.each do |i| %>
+      <tr>
+        <td><%= link_to i.title, {:action => :show, :id => i.id} %></td>
+        <td><%= i.date %></td>
+        <td width="60" align="center">
+          <%= link_to "", {:action => :destroy, :id => i.id}, :method => :delete, :confirm => "Deletar ?", :id => :icone_deletar, :title => 'Deletar' %>
+          <%= link_to "", {:action => :edit, :id => i.id}, :id => :icone_editar, :title => 'Editar' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+<% else %>
+  Não existem boletins cadastradas.
+<% end %>
+
+<%= render :partial => tooltip, :locals => {:local => '#table_listagem', :tipo => 'a', :lar => '40', :al => '20'} %>

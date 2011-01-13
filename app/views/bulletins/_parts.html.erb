@@ -1,0 +1,36 @@
+<%= render :partial => notice %>
+<fieldset id="show">
+  <h2>Composição do boletim</h2>
+
+  <% unless @bulletin.bulletin_parts.blank? %>
+
+  <table id="table_listagem">
+    <th>Título</th>
+    <th>Interface</th>
+    <th>Sequência</th>
+    <th></th>
+    <% @bulletin.bulletin_parts.each do |cp| %>
+      <tr>
+        <td><%= link_to cp.title, {:action => :show_part, :part_id => cp.id, :id => params[:id]} %></td>
+        <td><%= cp.interface.name %></td>
+        <td><%= cp.sequence_number %></td>
+        <td width="120" align="center">
+          <%= link_to_remote "", :url => {:action => :delete_part, :part_id => cp.id, :id => params[:id]}, :confirm => "Deletar ?", :html => {:id => :icone_deletar, :title => 'Deletar'} %>
+          <%= link_to_remote "", :url => {:action => :edit_part, :part_id => cp.id, :id => params[:id]}, :html => {:id => :icone_editar, :title => 'Editar'} %>
+          <%= link_to_remote "", :url => {:action => :add_img, :part_id => cp.id}, :html => {:id => :icone_add_img, :title => 'Adicionar imagem'} %>
+          <%= link_to_remote "", :url => {:action => :add_txt, :part_id => cp.id}, :html => {:id => :icone_add_txt, :title => 'Adicionar texto'} %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <% else %>
+
+    Não existem itens cadastros.
+
+  <% end %>
+
+</fieldset>
+
+<%= render :partial => tooltip, :locals => {:local => '#table_listagem', :tipo => 'a', :lar => '40', :al => '40'} %>
+

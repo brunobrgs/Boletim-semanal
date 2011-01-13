@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title> Boletim </title>
+
+    <!-- CSS -->
+    <%= stylesheet_link_tag 'login' %>
+
+  </head>
+
+  <body>
+
+  <section id="login">
+    <%= render :partial => notice %>
+    <% form_tag(:action => :home) do %>
+
+      <label> Login: <%= text_field_tag "user", "", :class => :form %></label>
+      <label> Senha: <%= password_field_tag "password", "", :class => :form %></label>
+
+      <%=  submit_tag 'Logar', :class => "botao_login", :disable_with => "Logando..." %>
+
+    <% end %>
+  </section>
+
+</body>
+</html>

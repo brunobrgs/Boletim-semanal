@@ -1,0 +1,54 @@
+<%= render :partial => notice %>
+<h1><%= @sponsor.name %></h1>
+
+<fieldset id="show">
+  <li>
+    <b>Usuário:</b>
+    <%= @sponsor.username %>
+  </li>
+
+  <% unless @sponsor.company.blank? %>
+    <li>
+      <b>Empresa:</b>
+      <%= @sponsor.company %>
+    </li>
+  <% end %>
+
+  <li>
+    <b>Email:</b>
+    <%= @sponsor.email %>
+  </li>
+
+  <% unless @sponsor.phone.blank? %>
+    <li>
+      <b>Telefone:</b>
+      <%= @sponsor.phone %>
+    </li>
+  <% end %>
+
+  <% unless @sponsor.cell_phone.blank? %>
+    <li>
+      <b>Celular:</b>
+      <%= @sponsor.cell_phone %>
+    </li>
+  <% end %>
+
+  <li>
+    <b>Endereço:</b>
+    <%= @sponsor.address %>
+  </li>
+
+  <li>
+    <b>Cidade:</b>
+    <%= @sponsor.city %>
+  </li>
+
+  <li>
+    <b>Data de cadastro:</b>
+    <%= @sponsor.date.to_formatted_s(:data) %>
+  </li>
+
+  <%= link_to "Editar", {:action => :edit, :id => @sponsor.id}, :class => :botao %>
+  <%= link_to "Voltar", {:action => :index}, :class => :botao %>
+
+</fieldset>

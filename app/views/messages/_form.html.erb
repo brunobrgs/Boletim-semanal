@@ -1,0 +1,24 @@
+<% unless @patrocinadores.blank? %>
+  <dl>
+    <dt><label>*Destino:</label></dt>
+    <dd><%= collection_select :mensagem, :sponsor_id, @patrocinadores, :id, :name, :include_blank => 'Selecione' %></dd>
+  </dl>
+<% end %>
+<dl>
+  <dt><label>*Identificação:</label></dt>
+  <dd><%= select(:mensagem, :ident, {"Mensagem"=>"M","Financeiro"=>"F"}, { :include_blank => false }) %></dd>
+</dl>
+<dl>
+  <dt><label>*Título</label></dt>
+  <dd><%= text_field :mensagem, :title, :size => 20, :maxlength => 30 %></dd>
+</dl>
+<dl>
+  <dt><label>*Texto</label></dt>
+  <dd><%= text_area(:mensagem, :text, :size => "50x5") %></dd>
+</dl>
+
+<dd><%= submit_tag "Salvar" %></dd>
+<dd><%= link_to "Voltar", {:action => :index}, :class => :botao %></dd>
+
+
+

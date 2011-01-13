@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  text: MyString
+  bulletin: 
+  interface: 
+  image1: MyString
+  image2: MyString
+  image3: MyString
+  sequence_number: 1
+
+two:
+  title: MyString
+  text: MyString
+  bulletin: 
+  interface: 
+  image1: MyString
+  image2: MyString
+  image3: MyString
+  sequence_number: 1

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title> Boletim </title>
+
+    <!-- CSS -->
+    <%= stylesheet_link_tag 'estilos' %>
+    <%= stylesheet_link_tag 'jquery.navMenu' %>
+    <%= stylesheet_link_tag 'niceforms-default' %>
+
+    <!-- JAVASCRIPT -->
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "jquery-1.4.4.min" %>
+    <%= javascript_include_tag "jquery.tools.min" %>
+    <%= javascript_include_tag "jquery.navMenu" %>
+    <%= javascript_include_tag "niceforms" %>
+    <script type="text/javascript">
+      J(document).ready(function(){
+        J('#navMenu').navMenu();
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="principal">
+      <div id="menu">
+        <%= render :partial => '/layouts/menu' %>
+      </div>
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

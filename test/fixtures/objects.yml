@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ident: MyString
+  width: MyString
+  height: MyString
+  top: MyString
+  right: MyString
+  bottom: MyString
+  left: MyString
+
+two:
+  ident: MyString
+  width: MyString
+  height: MyString
+  top: MyString
+  right: MyString
+  bottom: MyString
+  left: MyString

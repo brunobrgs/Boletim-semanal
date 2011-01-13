@@ -1,0 +1,12 @@
+<%= render :partial => notice %>
+
+<% form_for @sponsor, :html => {:class => 'niceform'} do %>
+
+  <fieldset>
+    <legend>Cadastrar patrocinador</legend>
+    <%= render :partial => 'form' %>
+  </fieldset>
+
+<% end %>
+
+

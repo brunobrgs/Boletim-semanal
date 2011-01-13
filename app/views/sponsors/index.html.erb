@@ -1,0 +1,23 @@
+<%= render :partial => notice %>
+<h1>Patrocinadores</h1>
+
+<% unless @sponsors.blank? %>
+
+  <ul class="list_data">
+    <% @sponsors.each do |u| %>
+      <li><%= link_to u.name, {:action => :show, :id => u.id} %>
+        <% if u.active %>
+          <%= link_to "", {:action => :inativar, :id => u.id}, :id => :icone_inativar, :title => 'Inativar', :confirm => 'Inativar ?' %>
+        <% else %>
+          <%= link_to "", {:action => :ativar, :id => u.id}, :id => :icone_ativar, :title => 'Ativar' %>
+        <% end %>
+        <%= link_to "", {:action => :edit, :id => u.id}, :id => :icone_editar, :title => 'Editar' %>
+      </li>
+    <% end %>
+  </ul>
+
+<% else %>
+  Não existem patrocinadores cadastrados.
+<% end %>
+
+<%= render :partial => tooltip, :locals => {:local => '.list_data', :tipo => 'a', :lar => '40', :al => '20'} %>

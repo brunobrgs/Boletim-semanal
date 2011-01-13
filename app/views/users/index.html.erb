@@ -1,0 +1,34 @@
+<%= render :partial => notice %>
+<h1>Usuários</h1>
+
+<% unless @users.blank? %>
+
+  <table id="table_listagem">
+    <th>Nome</th>
+    <th>Usuário</th>
+    <th>Data de criação</th>
+    <th width="20" align="center">Ativo</th>
+    <th width="60" align="center"></th>
+    <% @users.each do |u| %>
+      <tr>
+        <td><%= u.name %></td>
+        <td><%= u.username %></td>
+        <td><%= u.date.to_formatted_s(:data) %></td>
+        <td align="center"><%= u.active ? "<img src='/images/icones/2/001_18_2.png'>" : "<img src='/images/icones/2/001_19_2.png'>" %></td>
+        <td align="center">
+          <% if u.active %>
+            <%= link_to "", {:action => :inativar, :id => u.id}, :id => :icone_inativar, :title => 'Inativar', :confirm => 'Inativar ?' %>
+          <% else %>
+            <%= link_to "", {:action => :ativar, :id => u.id}, :id => :icone_ativar, :title => 'Ativar' %>
+          <% end %>
+          <%= link_to "", {:action => :edit, :id => u.id}, :id => :icone_editar, :title => 'Editar' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+<% else %>
+  Não existem usuários cadastrados.
+<% end %>
+
+<%= render :partial => tooltip, :locals => {:local => '#table_listagem', :tipo => 'a', :lar => '40', :al => '20'} %>

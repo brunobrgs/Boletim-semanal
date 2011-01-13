@@ -1,0 +1,13 @@
+<dl>
+  <dt><label>*Nome</label></dt>
+  <dd><%= text_field :interface, :name, :size => 30, :maxlength => 30 %></dd>
+</dl>
+<dl>
+  <dt><label>*Largura</label></dt>
+  <dd><%= text_field :interface, :width, :size => 5, :maxlength => 5 %></dd>
+</dl>
+<dd><%= submit_tag "Salvar" %></dd>
+<dd><%= link_to "Voltar", {:action => :index}, :class => :botao %></dd>
+
+
+

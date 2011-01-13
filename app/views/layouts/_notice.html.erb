@@ -1,0 +1,7 @@
+<% [:notice, :info, :warning, :error].each do |type| %>
+  <% if flash[type] %>
+    <div id="<%=type%>" class="<%=type%>">
+      <%= link_to_remote("#{flash[type]}" , :url =>{:controller => :application, :action => :remover_div, :div => "#{type}" }) %>
+    </div>
+  <% end %>
+<% end %>

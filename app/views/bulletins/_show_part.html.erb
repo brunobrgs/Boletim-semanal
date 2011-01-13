@@ -1,0 +1,26 @@
+<%= render :partial => notice %>
+<h1><%= @part.title%></h1>
+
+<fieldset id="show">
+
+  <h2>Textos</h2>
+  <br />
+  <% @part.bulletin_texts.each do |bt| %>
+    <%= link_to_remote "Remover", :url => {:action => :delete_txt, :txt_id => bt.id, :part_id => params[:part_id], :id => params[:id]} %>
+    <%= bt.text %><br /><br />
+  <% end %>
+
+  <br />
+  <h2>Imagens</h2>
+  <% @part.bulletin_images.each do |bi| %>
+    <%= link_to_remote "Remover", :url => {:action => :delete_img, :img_id => bi.id, :part_id => params[:part_id], :id => params[:id]} %>
+    <br />
+    <%= image_tag bi.image.url %><br /><br />
+  <% end %>
+  <br />
+
+  <div style="float: left;">
+    <%= link_to "Voltar", {:action => :show, :id => params[:id]}, :class => :botao %>
+  </div>
+
+</fieldset>

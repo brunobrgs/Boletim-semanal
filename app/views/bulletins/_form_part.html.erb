@@ -1,0 +1,28 @@
+<% form_remote_tag :url => {:action => :save_part, :id => params[:id], :part_id => params[:part_id]} do %>
+
+  <fieldset>
+    <legend>Salvar item</legend>
+
+    <dl>
+      <dt><label>*Título:</label></dt>
+      <dd><%= text_field_tag "bulletin_part[title]", @part.title, :size => 50, :maxlength => 70 %></dd>
+    </dl>
+    <dl>
+      <dt><label>*Interface:</label></dt>
+      <dd><%= collection_select :bulletin_part, :interface_id, @interfaces, :id, :name, :include_blank => "Selecione", :selected => @part.interface_id %></dd>
+    </dl>
+    <dl>
+      <dt><label>*Sequência:</label></dt>
+      <dd><%= text_field_tag "bulletin_part[sequence_number]", @part.sequence_number, :size => 3, :maxlength => 3 %></dd>
+    </dl>
+
+    <dd><%= submit_tag "Salvar" %></dd>
+
+
+    <div style="float: right;">
+      <%= link_to "Voltar", {:action => :index}, :class => :botao %>
+    </div>
+  </fieldset>
+<% end %>
+
+

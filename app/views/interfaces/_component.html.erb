@@ -1,0 +1,18 @@
+<fieldset id="show">
+  <legend> Componente </legend>
+  <%= render :partial => notice %>
+  <% form_remote_tag :url => {:action => :save_component, :id => params[:id], :component_id => params[:component_id]}, :html => {:style => "font-size: 10px;"} do %>
+    <%= hidden_field_tag "componente[interface_id]", params[:id] %>
+    *Identificação: <%= text_field_tag "componente[ident]", @component.ident, :size => 30, :maxlength => 30 %>
+    *Largura: <%= text_field_tag "componente[width]", @component.width, :size => 5, :maxlength => 5 %>
+    *Altura: <%= text_field_tag "componente[height]", @component.height, :size => 5, :maxlength => 5 %>
+    <br /><br />
+    Topo: <%= text_field_tag "componente[top]", @component.top, :size => 5, :maxlength => 5 %>
+    Direita: <%= text_field_tag "componente[right]", @component.right, :size => 5, :maxlength => 5 %>
+    Baixo: <%= text_field_tag "componente[bottom]", @component.bottom, :size => 5, :maxlength => 5 %>
+    Esquerda: <%= text_field_tag "componente[left]", @component.left, :size => 5, :maxlength => 5 %>
+    *Imagem: <%= radio_button_tag "componente[image]", true, (@component.image ? true : false) %> Sim <%= radio_button_tag "componente[image]", false, (@component.image ? false : true) %> Não
+    <br /><br />
+    <%= submit_tag "Salvar" %>
+  <% end %>
+</fieldset>

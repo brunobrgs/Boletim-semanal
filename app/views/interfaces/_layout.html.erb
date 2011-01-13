@@ -1,0 +1,38 @@
+<fieldset id="show" style="height: 300px; overflow: auto; ">
+
+  <div style="float: right;">
+    <%= link_to "Voltar", {:action => :index}, :class => :botao %>
+  </div>
+
+
+  <% @interface.components.each do |cp| %>
+    <li>
+      <%= link_to_remote cp.ident, :url => {:action => :edit_component, :component_id => cp.id, :id => params[:id]} %>
+      <%= link_to_remote "Remover", :url => {:action => :remove_component, :component_id => cp.id, :id => params[:id]} %>
+    </li>
+  <% end %>
+
+
+  <div style="position: relative; height: <%= @interface.altura %>px; width:<%= @interface.width %>px; border: 1px solid white;">
+    <% @interface.components.each do |cp| %>
+
+      <div
+        style="
+        position: absolute;
+        border: 1px solid black;
+        width: <%= cp.width %>px;
+        height: <%= cp.height %>px;
+        <% unless cp.top.blank? %> margin-top: <%= cp.top %>px; <% end %>
+        <% unless cp.left.blank? %> margin-left: <%= cp.left %>px; <% end %>
+        <% unless cp.right.blank? %> margin-right: <%= cp.right %>px; <% end %>
+        <% unless cp.bottom.blank? %> margin-bottom: <%= cp.bottom%>px; <% end %>
+        ">
+          <%= cp.image ? "Imagem" : "Texto" %>
+      </div>
+
+    <% end %>
+  </div>
+
+
+</fieldset>
+

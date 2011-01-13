@@ -1,0 +1,42 @@
+<div id="Conteudo" class="ui-corner-all">
+  <div id="run">
+    <ul id="navMenu">
+      <li><%= link_to "Home", :controller => :authentication, :action => :home %></li>
+      <% if user? %>
+        <li><%= link_to "Usuários", :controller => :users, :action => :index %>
+          <ul>
+            <li><%= link_to "Cadastrar", :controller => :users, :action => :new %></li>
+          </ul>
+        </li>
+        <li><%= link_to "Patrocinadores", :controller => :sponsors, :action => :index %>
+          <ul>
+            <li><%= link_to "Cadastrar", :controller => :sponsors, :action => :new %></li>
+          </ul>
+        </li>
+        <li><%= link_to "Emails", :controller => :emails, :action => :index %>
+          <ul>
+            <li><%= link_to "Cadastrar", :controller => :emails, :action => :new %></li>
+          </ul>
+        </li>
+        <li><%= link_to "Boletins", :controller => :bulletins, :action => :index %>
+          <ul>
+            <li><%= link_to "Cadastrar", :controller => :bulletins, :action => :new %></li>
+          </ul>
+        </li>
+        <li><%= link_to "Interfaces", :controller => :interfaces, :action => :index %>
+          <ul>
+            <li><%= link_to "Cadastrar", :controller => :interfaces, :action => :new %></li>
+          </ul>
+        </li>
+      <% end %>
+      <li><%= link_to "Mensagens", :controller => :messages, :action => :index %>
+        <ul>
+          <li><%= link_to "Enviar", :controller => :messages, :action => :new %></li>
+          <li><%= link_to "Enviadas", {:controller => :messages, :action => :index, :enviadas => true} %></li>
+          <li><%= link_to "Lixeira", {:controller => :messages, :action => :index, :deletadas => true} %></li>
+        </ul>
+      </li>
+      <li><%= link_to "Sair", :controller => :authentication, :action => :logout%></li>
+    </ul>
+  </div>
+</div>

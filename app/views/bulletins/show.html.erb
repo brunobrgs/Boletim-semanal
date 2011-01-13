@@ -1,0 +1,14 @@
+<div id="show_bolletin">
+  <%= render :partial => notice %>
+  <h1><%= @bulletin.title%></h1>
+
+  <div id="parts">
+    <%= render :partial => "parts" %>
+  </div>
+
+  <div id="form_part">
+    <%= render :partial => 'form_part' %>
+  </div>
+
+</div>
+

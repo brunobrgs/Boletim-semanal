@@ -1,0 +1,11 @@
+<%= render :partial => notice %>
+<h1><%= @mensagem.title%></h1>
+
+<fieldset id="show">
+  <li>
+    <%= @mensagem.text %>
+  </li>
+
+  <%= link_to "Voltar", {:action => :index, :enviadas => params[:enviadas], :deletadas => params[:deletadas]}, :class => :botao %>
+
+</fieldset>

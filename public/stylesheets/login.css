@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    outline:none;
+    font-family: Verdana, Arial, Tahoma, Helvetica, sans-serif;
+}
+
+fieldset{border:none;}
+img {border:none;}
+
+html{height: 100%; overflow: hidden;}
+body {background:url(../images/sistema/Wallpaper.jpg) no-repeat top fixed;}
+
+a{color:#000; text-decoration:none;}
+a:hover{color:#666; text-decoration:none;}
+
+
+
+/*-------------------------------------------
+Login
+-------------------------------------------*/
+section#login{
+    background:#FFF url(../images/sistema/bg-login.jpg) repeat-x center top;
+    border:1px solid #FFF;
+    padding:20px;
+    display:block;
+    position: absolute;
+    bottom:30%;
+    left:35%;
+    width:400px;
+    height:190px;
+
+
+    /** Bordas arrendondadas **/
+    border-radius:10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+
+    /** Sombras **/
+    box-shadow: #666 0 0 15px;
+    -moz-box-shadow: #666 0 0 15px;
+    -webkit-box-shadow: #666 0 0 15px;
+}
+
+section#login label{
+    font-size:13px;
+    color:#000;
+    float:left;
+    width:390px;
+    margin:10px  0;
+}
+section#login input{
+    border:1px solid #CCC;
+    color:#608C01;
+    margin:3px  0;
+    padding:5px;
+    width:380px;
+    float:right;
+}
+section#login input:focus{
+    -moz-box-shadow: grey 0 1px 7px;
+    -webkit-box-shadow: grey 0 1px 7px;
+    -khtml-box-shadow: grey 0 1px 7px;
+
+    box-shadow:grey  0 1px 15px;
+
+}
+
+.botao_login{
+    color:#000 !important;
+    text-shadow:1px 1px 1px #FFF;
+    padding:5px!important;
+    cursor:pointer;
+    float:left !important;
+    width:90px !important;
+    margin:5px 0 0 0;
+    font-size:11px;
+
+    background:#DADADA;
+    background: -moz-linear-gradient(top, #F1F1F1, #ACACAC);
+    background: -webkit-gradient(linear, center top, center bottom, from(#F1F1F1), to(#ACACAC));
+
+    border:1px solid #CCC;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+.botao_login:hover{
+    border:1px solid #FFF;
+    color:#FFF;
+
+    -webkit-box-shadow:1px 1px 5px #666;
+    -moz-box-shadow:1px 1px 5px #666;
+    box-shadow:1px 1px 5px #666;
+}
+
+#erro_login{
+    font-size:12px;
+    color:red;
+    clear:both;
+    margin:10px 0 0 0;
+    float:left;
+}
+
+strong{
+    font: Bold 11px Verdana, Arial, Helvetica,  sans-serif;
+    color:#000;
+    text-align:center;
+    clear:both;
+    display:block;
+}
+
+.copy{
+    display:block;
+    position: absolute;
+    bottom:20px;
+    right:10px;
+}
+
+
+
+
+
+
+
+

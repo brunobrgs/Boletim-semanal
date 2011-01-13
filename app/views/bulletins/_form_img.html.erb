@@ -1,0 +1,24 @@
+<% form_tag({:action => :save_img, :id => params[:id], :part_id => params[:part_id]}, {:multipart => true, :target => 'frame'}) do %>
+
+  <fieldset>
+    <legend>Adicionar imagem (<%= @part.title %>)</legend>
+    <%= render :partial => notice  %>
+
+    <div id="texts">
+      <dl>
+        <dt><label>*Imagem:</label></dt>
+        <dd><%= file_field :bulletin_image, :image%></dd>
+      </dl>
+    </div>
+
+    <dd><%= submit_tag "Adicionar" %></dd>
+
+
+    <div style="float: right;">
+      <%= link_to "Voltar", {:action => :index}, :class => :botao %>
+    </div>
+  </fieldset>
+  <iframe id="frame" name="frame" scrolling="auto" frameborder="0" style="width: 100%; height: 100%; position: absolute; top: 0pt; left: -10000px;" ></iframe>
+<% end %>
+
+

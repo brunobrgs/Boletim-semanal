@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  text: MyString
+  type: MyString
+  date: 2011-01-05 21:51:53
+  user: 
+  sponsor: 
+  message_id: 1
+  deleted_by_user: 2011-01-05
+  deleted_by_sponsor: 2011-01-05
+
+two:
+  text: MyString
+  type: MyString
+  date: 2011-01-05 21:51:53
+  user: 
+  sponsor: 
+  message_id: 1
+  deleted_by_user: 2011-01-05
+  deleted_by_sponsor: 2011-01-05
