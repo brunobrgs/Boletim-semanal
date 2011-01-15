@@ -11,6 +11,7 @@ Rails::Initializer.run do |config|
   config.active_record.timestamped_migrations = false #Deixa o migrate gerar numeros sequenciais
   #Encoding.default_external="UTF-8"
   config.i18n.default_locale = "pt-BR"
+	config.gem "mysql"
   
 end
 
